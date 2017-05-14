@@ -1,7 +1,7 @@
 type: s
 empty: false
 shadowsocks:
-  address: 0.0.0.0:4000
+  address: 198.199.76.248:8839
   # 这里的地址和端口需要跟上一步的 --manager-address 参数保持一致
 manager:
   address: 0.0.0.0:4001
