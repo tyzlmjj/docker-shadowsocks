@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER gyteng <igyteng@gmail.com>
 RUN apt-get update && \
-    apt-get install curl git sudo -y && \
+    apt-get install apt-utils curl git sudo -y && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get install -y nodejs && \
     npm i -g shadowsocks-manager && \
