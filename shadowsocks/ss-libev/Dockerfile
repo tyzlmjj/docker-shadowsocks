@@ -1,16 +1,20 @@
 FROM alpine:3.5
-MAINTAINER kev <noreply@datageek.info>
+
+LABEL maintainer "tyzl931019@gmail.com"
 
 ARG SS_VER=3.0.6
 ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
 
-ENV SERVER_ADDR 0.0.0.0
-ENV SERVER_PORT 8388
+ENV SERVER_ADDR  0.0.0.0
+ENV SERVER_PORT  8388
+ENV MANAGER_PORT 8839
 ENV PASSWORD=
-ENV METHOD      aes-256-cfb
-ENV TIMEOUT     300
-ENV DNS_ADDR    8.8.8.8
-ENV DNS_ADDR_2  8.8.4.4
+ENV METHOD       aes-256-cfb
+ENV TIMEOUT      300
+ENV DNS_ADDR     8.8.8.8
+ENV DNS_ADDR_2   8.8.4.4
+
+# RUN sed -i 's/http:\/\/dl-cdn.alpinelinux.org/https:\/\/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN set -ex && \
     apk add --no-cache --virtual .build-deps \
@@ -54,4 +58,7 @@ CMD ss-server -s $SERVER_ADDR \
               --fast-open \
               -d $DNS_ADDR \
               -d $DNS_ADDR_2 \
-              -u
+              -u \
+    &&  ss-manager -m $METHOD \
+                   --manager-address $SERVER_ADDR:$MANAGER_PORT \
+                   -u \
