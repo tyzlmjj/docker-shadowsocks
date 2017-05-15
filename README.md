@@ -23,8 +23,7 @@ $ docker ps
 创建一个 `docker-compose.yml` 文件.
 
 ```yaml
-version: '2'
-ss-server:
+server:
   image: tyzlmjj/shadowsocks:libev
   ports:
     # 设置对外接口
@@ -32,7 +31,7 @@ ss-server:
     - "8388:8388/udp"
   environment:
     # 密码
-    - PASSWORD=7YCTozLVuxzy
+    - PASSWORD=9MLSpPmNt
   restart: always
 ```
 
