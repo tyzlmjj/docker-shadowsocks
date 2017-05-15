@@ -1,5 +1,4 @@
-version: '2'
-ss-server:
+server:
   image: tyzlmjj/shadowsocks:libev
   ports:
     # 设置对外接口
