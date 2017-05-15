@@ -1,10 +1,11 @@
-shadowsocks:
-  image: ss-libev:latest
+version: '2'
+ss-server:
+  image: tyzlmjj/shadowsocks:libev
   ports:
+    # 设置对外接口
     - "8388:8388/tcp"
     - "8388:8388/udp"
-    - "8839:8839"
   environment:
-    - METHOD=aes-256-cfb
+    # 密码
     - PASSWORD=7YCTozLVuxzy
   restart: always

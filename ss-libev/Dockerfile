@@ -7,13 +7,13 @@ ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$
 
 ENV SERVER_ADDR  0.0.0.0
 ENV SERVER_PORT  8388
-ENV MANAGER_PORT 8839
-ENV PASSWORD=
+ENV PASSWORD     123456
 ENV METHOD       aes-256-cfb
 ENV TIMEOUT      300
 ENV DNS_ADDR     8.8.8.8
 ENV DNS_ADDR_2   8.8.4.4
 
+# 设置镜像源为清华的
 # RUN sed -i 's/http:\/\/dl-cdn.alpinelinux.org/https:\/\/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN set -ex && \
@@ -49,7 +49,6 @@ RUN set -ex && \
 USER nobody
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-EXPOSE $MANAGER_PORT
 
 CMD ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
@@ -59,7 +58,4 @@ CMD ss-server -s $SERVER_ADDR \
               --fast-open \
               -d $DNS_ADDR \
               -d $DNS_ADDR_2 \
-              -u \
-    &&  ss-manager -m $METHOD \
-                   --manager-address $SERVER_ADDR:$MANAGER_PORT \
-                   -u \
+              -u
