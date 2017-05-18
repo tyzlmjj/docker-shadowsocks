@@ -1,7 +1,7 @@
 type: s
 empty: false
 shadowsocks:
-  address: 198.199.76.248:8839
+  address: 127.0.0.1:8839
 manager:
   address: 0.0.0.0:4001
   password: '123456'

@@ -41,7 +41,7 @@ plugins:
     use: true
     host: '0.0.0.0'
     port: '80'
-    site: 'http://198.199.76.248'
+    site: 'http://0.0.0.0'
     gcmSenderId: '456102641793'
     gcmAPIKey: 'AAAAGzzdqrE:XXXXXXXXXXXXXX'
 db: 'webgui.sqlite'

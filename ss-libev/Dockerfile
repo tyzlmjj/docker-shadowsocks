@@ -46,8 +46,6 @@ RUN set -ex && \
     apk del .build-deps && \
     rm -rf /tmp/*
 
-EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-
 CMD ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
               -k ${PASSWORD:-$(hostname)} \
