@@ -1,0 +1,26 @@
+
+ss_manager:
+  image: tyzlmjj/shadowsocks:libev
+  command: ss-manager -m ${METHOD} -u --manager-address 127.0.0.1:${SS_MANAGER_PORT}
+  net: "host"
+  restart: always
+
+ssmgr_c:
+  image: tyzlmjj/shadowsocks:manager
+  ports:
+    # 设置对外接口
+    - "${SSMGR_C_PORT}:4001"
+  command: -c /root/.ssmgr/ss.yml
+  volumes:
+    - "./ssmgr:/root/.ssmgr"
+  restart: always
+
+ssmgr_m:
+  image: tyzlmjj/shadowsocks:manager
+  ports:
+    # 设置对外接口
+    - "${SSMGR_M_PORT}:80"
+  command: -c /root/.ssmgr/webgui.yml
+  volumes:
+    - "./ssmgr:/root/.ssmgr"
+  restart: always

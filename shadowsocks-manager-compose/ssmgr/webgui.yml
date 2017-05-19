@@ -1,0 +1,54 @@
+type: m
+empty: false
+
+manager:
+  address: 192.168.62.118:4001
+  password: '123456'
+  # 这部分的端口和密码需要跟上一步 manager 参数里的保持一致
+plugins:
+  flowSaver:
+    use: true
+  user:
+    use: true
+  account:
+    use: true
+    pay:
+      hour:
+        price: 0.03
+        flow: 500000000
+      day:
+        price: 0.5
+        flow: 7000000000
+      week:
+        price: 3
+        flow: 50000000000
+      month:
+        price: 10
+        flow: 200000000000
+      season:
+        price: 30
+        flow: 200000000000
+      year:
+        price: 120
+        flow: 200000000000
+  email:
+    use: true
+    username: 'tyzlmjj@yeah.net'
+    password: 'fVtGpAEB6wO'
+    host: 'smtp.yeah.net'
+    name: 'MJJ'
+  webgui:
+    use: true
+    host: '0.0.0.0'
+    port: '80'
+    site: 'http://yourwebsite.com'
+    gcmSenderId: '456102641793'
+    gcmAPIKey: 'AAAAGzzdqrE:XXXXXXXXXXXXXX'
+  alipay:
+    use: true
+    appid: 2015012108272442
+    notifyUrl: ''
+    merchantPrivateKey: 'xxxxxxxxxxxx'
+    alipayPublicKey: 'xxxxxxxxxxx'
+    gatewayUrl: 'https://openapi.alipay.com/gateway.do'
+db: 'webgui.sqlite'
