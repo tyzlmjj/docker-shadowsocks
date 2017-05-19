@@ -2,7 +2,7 @@ type: s
 empty: false
 shadowsocks:
   address: 192.168.62.118:4000
-  # 这里的地址和端口需要跟上一步的 --manager-address 参数保持一致
+  # 修改这里的IP地址为主机IP
 manager:
   address: 0.0.0.0:4001
   password: '123456'

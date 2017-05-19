@@ -2,9 +2,10 @@ type: m
 empty: false
 
 manager:
+  # 修改这里的IP地址为主机IP
   address: 192.168.62.118:4001
   password: '123456'
-  # 这部分的端口和密码需要跟上一步 manager 参数里的保持一致
+  # 这部分的端口和密码需要跟上一步 ss.yml 参数里的保持一致
 plugins:
   flowSaver:
     use: true
@@ -33,8 +34,8 @@ plugins:
         flow: 200000000000
   email:
     use: true
-    username: 'tyzlmjj@yeah.net'
-    password: 'fVtGpAEB6wO'
+    username: '@yeah.net'
+    password: '1234567'
     host: 'smtp.yeah.net'
     name: 'MJJ'
   webgui:
