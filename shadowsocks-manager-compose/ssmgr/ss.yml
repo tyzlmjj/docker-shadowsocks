@@ -1,7 +1,7 @@
 type: s
 empty: false
 shadowsocks:
-  address: 192.168.62.118:4000
+  address: 127.0.0.1:4000
   # 修改这里的IP地址为主机IP
 manager:
   address: 0.0.0.0:4001

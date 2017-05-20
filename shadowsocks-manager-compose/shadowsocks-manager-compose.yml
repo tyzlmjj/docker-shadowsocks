@@ -7,9 +7,7 @@ ss_manager:
 
 ssmgr_c:
   image: tyzlmjj/shadowsocks:manager
-  ports:
-    # 设置对外接口
-    - "${SSMGR_C_PORT}:4001"
+  net: "host"
   command: -c /root/.ssmgr/ss.yml
   volumes:
     - "./ssmgr:/root/.ssmgr"
@@ -17,9 +15,7 @@ ssmgr_c:
 
 ssmgr_m:
   image: tyzlmjj/shadowsocks:manager
-  ports:
-    # 设置对外接口
-    - "${SSMGR_M_PORT}:80"
+  net: "host"
   command: -c /root/.ssmgr/webgui.yml
   volumes:
     - "./ssmgr:/root/.ssmgr"

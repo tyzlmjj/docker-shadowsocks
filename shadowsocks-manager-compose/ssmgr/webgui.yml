@@ -2,8 +2,7 @@ type: m
 empty: false
 
 manager:
-  # 修改这里的IP地址为主机IP
-  address: 192.168.62.118:4001
+  address: 0.0.0.0:4001
   password: '123456'
   # 这部分的端口和密码需要跟上一步 ss.yml 参数里的保持一致
 plugins:
