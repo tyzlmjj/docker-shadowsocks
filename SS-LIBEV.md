@@ -77,7 +77,7 @@ networks:
 ```
 $ docker swarm init --advertise-addr <ip|interface>[:port] --listen-addr <ip|interface>[:port]
 ```
-`<ip|interface>[:port]` 替换为你的ip地址，如： `10.10.10.10:8888`
+`<ip|interface>[:port]` 替换为你的本地ip地址，如： `10.10.10.10:8888`
 
 **启动镜像**
 ```
