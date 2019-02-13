@@ -2,7 +2,7 @@ FROM alpine:3.5
 
 LABEL maintainer "tyzl931019@gmail.com"
 
-ARG SS_VER=3.0.6
+ARG SS_VER=3.2.3
 ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
 
 ENV SERVER_ADDR  0.0.0.0
