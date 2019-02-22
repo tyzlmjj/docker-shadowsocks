@@ -1,11 +1,14 @@
 # docker-shadowsocks-libev
 
+shadowsocks-libev 已经提供了[Docker实现](https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine)，所以直接使用就可以了
+
+
 ## 启动SS服务
 
 安装好docker并启动，执行下面的命令就会启动一个ss服务,注意修改密码!
 
 ```bash
-$ docker run -d -e PASSWORD=9MLSpPmNt -p 8388:8388/tcp -p 8388:8388/udp --restart always tyzlmjj/shadowsocks:libev
+$ docker run -d -e PASSWORD=9MLSpPmNt -p 8388:8388/tcp -p 8388:8388/udp --restart always shadowsocks/shadowsocks-libev:latest
 ```
 
 可以用`docker ps`命令查看运行的容器。
@@ -19,7 +22,7 @@ $ docker run -d -e PASSWORD=9MLSpPmNt -p 8388:8388/tcp -p 8388:8388/udp --restar
 
 ```yaml
 server:
-  image: tyzlmjj/shadowsocks:libev
+  image: shadowsocks/shadowsocks-libev:latest
   ports:
     # 设置对外端口
     - "8388:8388/tcp"
@@ -47,7 +50,7 @@ $ docker-compose up -d
 version: "3"
 services:
   ss_server:
-    image: tyzlmjj/shadowsocks:libev
+    image: shadowsocks/shadowsocks-libev:latest
     deploy:
       #运行容器数量
       replicas: 5

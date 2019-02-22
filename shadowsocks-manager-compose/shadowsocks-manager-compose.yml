@@ -1,6 +1,6 @@
 
 ss_manager:
-  image: tyzlmjj/shadowsocks:libev
+  image: shadowsocks/shadowsocks-libev:latest
   command: ss-manager -m ${METHOD} -u --manager-address 127.0.0.1:${SS_MANAGER_PORT}
   net: "host"
   restart: always
